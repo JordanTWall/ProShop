@@ -6,7 +6,9 @@ const reviewSchema = mongoose.Schema(
     rating: { type: Number, required: true },
     comment: { type: String, required: true },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 )
 
 const productSchema = mongoose.Schema(
@@ -63,9 +65,6 @@ const productSchema = mongoose.Schema(
   }
 )
 
-const Product = (mongoose.model = mongoose.model('Product', productSchema))
+const Product = mongoose.model('Product', productSchema)
 
-const User = mongoose.model('User', userSchema)
-
-export default User
 export default Product
